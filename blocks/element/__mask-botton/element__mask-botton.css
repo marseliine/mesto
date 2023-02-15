@@ -1,0 +1,17 @@
+
+.element__mask-button {
+    width: 22px;
+    height: 19px;
+    background-image: url('../../../images/heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.element__mask-button:hover {
+    background-image: url('../../../images/hearthover.png');
+}
+.element__mask-button:active {
+    background-image: url('../../../images/heartactive.png');
+}

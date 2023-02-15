@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru" >
+<head>
+  <title>Научиться учиться</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+  <header class="header">
+    <img
+      class="header__logo"
+      alt="Логотип MESTO"
+      src="./images/Vector.png"/>
+  </header>
+  <main>
+    <section class="profile">
+      <img class="profile__avatar" src="./images/profile.png" alt="Аватарка в портфолио">
+      <div class="profile__info">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <button class="profile__edit-button" type="button"></button>
+        <p class="profile__subtitle">Исследователь океана</p>
+      </div>
+      <button class="profile__add-button" type="button"></button>
+    </section>
+    <section class="elements">
+      <div class="element">
+          <img class="element__photo" src="./images/karacheevsk.png" alt="Карачаевск">
+          <div class="element__mask">
+            <p class="element__title">Карачаевск</p>
+            <button class="element__mask-button" type="button"></button>
+          </div>
+      </div>
+        <div class="element">
+          <img class="element__photo" src="./images/lbrus.png" alt="Эльбрус">
+          <div class="element__mask">
+            <p class="element__title">Гора Эльбрус</p>
+            <button class="element__mask-button" type="button"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/dombay.png" alt="Домбай">
+          <div class="element__mask">
+            <p class="element__title">Домбай</p>
+            <button class="element__mask-button" type="button"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/lbrus.png" alt="Эльбрус">
+          <div class="element__mask">
+            <p class="element__title">Гора Эльбрус</p>
+            <button class="element__mask-button" type="button"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/dombay.png" alt="Домбай">
+          <div class="element__mask">
+            <p class="element__title">Домбай</p>
+            <button class="element__mask-button" type="button"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img class="element__photo" src="./images/karacheevsk.png" alt="Карачаево-Ч...">
+          <div class="element__mask">
+            <p class="element__title">Карачаево-Ч...</p>
+            <button class="element__mask-button" type="button"></button>
+          </div>
+        </div>
+       </section>
+  </main>
+  <footer class="footer">
+    <span class="footer__mesto">&#169; 2023 Mesto Russia</span>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <button aria-label="Close" class="popup__button-close" type="button"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form" name="form-profile" novalidate>
+        <input
+          type="text"
+          name="popup-name"
+          class="popup__input popup__input_type_name"
+          placeholder="Жак-Ив Кусто"
+          required>
+        <input
+          type="text"
+          name="popup-job"
+          class="popup__input popup__input_type_job"
+          placeholder="Исследователь океана"
+          required>
+        <button class="popup__button popup__button-submit" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>

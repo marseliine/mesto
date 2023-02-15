@@ -1,0 +1,14 @@
+
+.popup__input_type_name {
+    width: 358px;
+    height: 27px;
+    border: none;
+    color: black;
+    border-bottom: 1px solid #DCDCDC ;
+}
+.popup__input_type_name::placeholder {
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+}

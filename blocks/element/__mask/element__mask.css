@@ -1,0 +1,8 @@
+
+.element__mask {
+    max-width: 246px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+    align-items: center;
+}
