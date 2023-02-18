@@ -1,4 +1,3 @@
-
 .popup__container {
     display: flex;
     flex-direction: column;
@@ -11,8 +10,10 @@
     margin: 0;
     z-index: 2;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 772px) {
     .popup__container {
+        top: 120px;
         width: 282px;
+        height: 322px;
     }
 }
