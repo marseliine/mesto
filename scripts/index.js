@@ -19,8 +19,6 @@ popupButtonClose.addEventListener('click', function() {
 
 function handleFormSubmit (evt) {
     evt.preventDefault();
-    document.getElementsByClassName('.popup__input_type_name').value;
-    document.getElementsByClassName('.popup__input_type_job').value;
     profileName.textContent = nameInput.value;
     profileSub.textContent = jobInput.value;
     popup.classList.remove('popup_opened');
