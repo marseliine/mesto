@@ -3,14 +3,21 @@
     font-size: 42px;
     line-height: 48px;
     color: #fff;
-    margin: 22px 0 0 0;
+    padding: 30px 0 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0;
 }
 @media screen and (max-width: 904px) {
     .profile__title {
         font-size: 27px;
         line-height: 32px;
-        margin: 22px 10px 0 55px;
+        padding: 33px 0 0 64px;
         align-items: center;
         justify-content: center;
+        margin: 0;
     }
 }
