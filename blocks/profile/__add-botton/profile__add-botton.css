@@ -2,13 +2,13 @@
     width: 150px;
     height: 50px;
     background-color: black;
-    border-color: #fff;
+    border: solid 2px #fff;
     border-radius: 2px;
     background-image: url('../../../images/plus.png');
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    margin: 35px 0 35px 244px;
+    margin: 35px 0 35px auto;
     background-size: 22px 22px;
 }
 @media screen and (max-width: 904px) {
@@ -20,7 +20,7 @@
 }
 @media screen and (max-width: 350px) {
     .profile__add-button {
-        margin: 35px 19px 0;
+        margin: 41px 19px 0;
     }
 }
 .profile__add-button:hover {
