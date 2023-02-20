@@ -5,3 +5,8 @@
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
     margin: 50px auto 0;
 }
+@media screen and (max-width: 500px) {
+    .elements {
+        margin: 40px auto 0;
+    }
+}
