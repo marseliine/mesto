@@ -4,10 +4,11 @@
     height: 27px;
     border: none;
     color: black;
-    border-bottom: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC ;
     font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
+    margin-top: 43px;
 }
 .popup__input::placeholder {
     color: black;
