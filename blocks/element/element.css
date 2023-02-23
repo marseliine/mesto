@@ -9,6 +9,7 @@
 }
 @media screen and (max-width: 904px) {
     .element {
+        height: 361px;
         margin: 0 19px 0;
     }
 }
