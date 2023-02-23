@@ -8,7 +8,8 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
-    margin-top: 43px;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 .popup__input::placeholder {
     color: black;
