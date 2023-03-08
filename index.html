@@ -24,49 +24,17 @@
       <button class="profile__add-button" type="button"></button>
     </section>
     <section class="elements">
-      <div class="element">
-          <img class="element__photo" src="./images/karacheevsk.png" alt="Карачаевск">
+      <template class="card-template">
+        <article class="element">
+          <button class = "element__trash"></button>
+          <img class="element__photo" data-type="auto">
           <div class="element__mask">
-            <h3 class="element__title">Карачаевск</h3>
-            <button class="element__mask-button" type="button"></button>
+            <h2 class="element__title"></h2>
+            <button class="element__mask-button"></button>
           </div>
-      </div>
-        <div class="element">
-          <img class="element__photo" src="./images/lbrus.png" alt="Эльбрус">
-          <div class="element__mask">
-            <h3 class="element__title">Гора Эльбрус</h3>
-            <button class="element__mask-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/dombay.png" alt="Домбай">
-          <div class="element__mask">
-            <h3 class="element__title">Домбай</h3>
-            <button class="element__mask-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/lbrus.png" alt="Эльбрус">
-          <div class="element__mask">
-            <h3 class="element__title">Гора Эльбрус</h3>
-            <button class="element__mask-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/dombay.png" alt="Домбай">
-          <div class="element__mask">
-            <h3 class="element__title">Домбай</h3>
-            <button class="element__mask-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/karacheevsk.png" alt="Карачаево-Ч...">
-          <div class="element__mask">
-            <h3 class="element__title">Карачаево-Ч...</h3>
-            <button class="element__mask-button" type="button"></button>
-          </div>
-        </div>
-       </section>
+        </article>
+      </template>
+    </section>
   </main>
   <footer class="footer">
     <p class="footer__mesto">&#169; 2023 Mesto Russia</p>
@@ -88,8 +56,36 @@
           class="popup__input popup__input_type_job"
           placeholder="Исследователь океана"
           required>
-        <button class="popup__button popup__button-submit" type="submit">Сохранить</button>
+        <button class="popup__button-submit" type="submit">Сохранить</button>
       </form>
+    </div>
+  </div>
+  <div class="popup popup-new">
+    <div class="popup__container container-new">
+    <button aria-label="Close" class="popup__button-close button-close-new" type="button"></button>
+    <h2 class="popup__title title-new">Новое место</h2>
+    <form class="popup__form form-new" name="form-cards">
+      <input
+              type="text"
+              name="popup-title"
+              class="popup__input popup__input_type_title"
+              placeholder="Название"
+              required>
+      <input
+              type="text"
+              name="popup-href"
+              class="popup__input popup__input_type_href"
+              placeholder="Ссылку на картинку"
+              required>
+      <button class="popup__button-submit button-submit-new" type="submit">Сохранить</button>
+    </form>
+  </div>
+  </div>
+  <div class="popup__photo">
+    <div class="popup__container-photo">
+      <img class="popup__open-photo" src="#" alt="">
+      <p class="popup__header-photo"></p>
+      <button type="button" class="popup__close popup__button-close-photo"></button>
     </div>
   </div>
   <script src="./scripts/index.js"></script>
