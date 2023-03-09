@@ -12,6 +12,3 @@
 .element__mask-button:hover {
     background-image: url('../../../images/hearthover.png');
 }
-.element__mask-button:active {
-    background-image: url('../../../images/heartactive.png');
-}
