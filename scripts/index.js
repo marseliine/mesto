@@ -99,13 +99,13 @@ function createCard(elementName, elementLink) {
         imageBig.src = evt.target.src;
         let titlePopup = document.querySelector('.popup__header-photo');
         titlePopup.textContent = evt.target.closest('.element').querySelector('.element__title').textContent;
-        document.querySelector('.popup__photo').classList.add('popup_opened');
+        document.querySelector('.popup-photo').classList.add('popup_opened');
     }
     let newBigImage = newCard.querySelector('.element__photo');
     newBigImage.addEventListener('click', handleBigImage);
     let popupImageClose = document.querySelector('.popup__button-close-photo');
     popupImageClose.addEventListener('click', function(){
-        document.querySelector('.popup__photo').classList.remove('popup_opened');
+        document.querySelector('.popup-photo').classList.remove('popup_opened');
     })
 
     return newCard;
@@ -139,8 +139,8 @@ function handleFormSubmitCard(evt) {
     // добавляет новую карточку в галерею
     addCard(createCard(popupInputImage.value, popupInputLink.value));
 
-        cardHeading.textContent = newImageCard.title;
-        cardImage.setAttribute('src', newImageCard.image);
+    cardHeading.textContent = newImageCard.title;
+    cardImage.setAttribute('src', newImageCard.image);
     // добавляет в начало
     popupInputImage.value = '';
     popupInputLink.value = '';
