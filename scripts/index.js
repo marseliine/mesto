@@ -1,10 +1,8 @@
-const close = document.querySelectorAll('.popup__button-close');
+const buttonClose = document.querySelectorAll('.popup__button-close');
 const popupEdit = document.querySelector('.popup-edit');
 const popupNewCard = document.querySelector('.popup-new');
 const popupPhotoBig = document.querySelector('.popup-photo');
-const popup = [
-    popupEdit, popupNewCard, popupPhotoBig
-];
+const popups = document.querySelectorAll('.popup');
 const cardTemplate = document.querySelector('.card-template').content;
 ///контейнеры
 const popupProfileContainer = document.querySelector('.popup__container')
@@ -33,15 +31,15 @@ const popupImageClose = document.querySelector('.popup__button-close-photo');
 const imageBig = document.querySelector('.popup__open-photo');
 const titlePopup = document.querySelector('.popup__header-photo');
 
-function openPopup (popup) {
-    popup.classList.add('popup_opened');
+function openPopup (popups) {
+    popups.classList.add('popup_opened');
 }
-function closePopup (popup) {
-    popup.classList.remove('popup_opened');
+function closePopup (popups) {
+    popups.classList.remove('popup_opened');
 }
-close.forEach( (button) => {
-    const clickButton = button.closest('.popup');
-    button.addEventListener('click', () => closePopup(clickButton));
+buttonClose.forEach( (button) => {
+    const popupButtonClosest = button.closest('.popup');
+    button.addEventListener('click', () => closePopup(popupButtonClosest));
 });
 
 profileEdit.addEventListener('click', function() {
@@ -55,7 +53,7 @@ function handleFormSubmit (evt) {
     profileSubtitle.textContent = jobInput.value;
     closePopup(popupEdit);
 }
-formElementEditProfile .addEventListener('submit', handleFormSubmit);
+formElementEditProfile.addEventListener('submit', handleFormSubmit);
 
 profileAdd.addEventListener('click', function() {
     openPopup(popupNewCard)
@@ -95,7 +93,6 @@ function createCard(elementName, elementLink) {
     cardImage.setAttribute('src', elementLink);
     cardImage.alt = elementName;
 
-    const newImagesButton = newCard.querySelector('.button-submit-new');
     const newImages = () => {
         const cardContainer = newImagesButton.closest('.element');
         cardContainer.remove();
@@ -115,8 +112,8 @@ function createCard(elementName, elementLink) {
         openPopup(popupPhotoBig)
         closePopup();
     }
-    const newBigImage = newCard.querySelector('.element__photo');
-    newBigImage.addEventListener('click', handleBigImage);
+
+    cardImage.addEventListener('click', handleBigImage);
 
     return newCard;
 }
@@ -145,8 +142,6 @@ function handleFormSubmitCard(evt) {
     ////////////////// переменные присваивают значения
     // добавляет новую карточку в галерею
     addCard(createCard(popupInputImage.value, popupInputLink.value));
-    popupInputImage.value = "";
-    popupInputLink.value = "";
     ///// Закрытие попапа
     formElementNewCard.reset();
     closePopup(popupNewCard);
