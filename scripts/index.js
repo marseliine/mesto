@@ -93,10 +93,6 @@ function createCard(elementName, elementLink) {
     cardImage.setAttribute('src', elementLink);
     cardImage.alt = elementName;
 
-    const newImages = () => {
-        const cardContainer = newImagesButton.closest('.element');
-        cardContainer.remove();
-    }
 ///////лайк карточки/////////////////////////////////////
     const  likeButtonCard = newCard.querySelector('.element__mask-button');
     likeButtonCard.addEventListener('click', handleLikeClick);
@@ -110,7 +106,6 @@ function createCard(elementName, elementLink) {
         titlePopup.textContent = evt.target.closest('.element').querySelector('.element__title').textContent;
         imageBig.alt = evt.target.closest('.element').querySelector('.element__title').textContent;
         openPopup(popupPhotoBig)
-        closePopup();
     }
 
     cardImage.addEventListener('click', handleBigImage);
