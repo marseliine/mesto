@@ -14,8 +14,9 @@
     .profile__subtitle {
         font-size: 14px;
         line-height: 16px;
-        margin: 9px 0 0 79px;
+        margin: 0;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 }
