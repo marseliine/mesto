@@ -15,14 +15,10 @@
     .profile__add-button {
         width: 282px;
         background-size: 16px 16px;
-        margin: 35px 0 35px 45px;
+        margin: 0;
     }
 }
-@media screen and (max-width: 350px) {
-    .profile__add-button {
-        margin: 41px 19px 0;
-    }
-}
+
 .profile__add-button:hover {
     opacity: 60%;
 }
