@@ -14,10 +14,11 @@
 @media screen and (max-width: 904px) {
     .profile__title {
         font-size: 27px;
-        line-height: 32px;
-        padding: 33px 0 0 64px;
         align-items: center;
         justify-content: center;
-        margin: 0;
+        margin-left: 20px;
+        padding: 0;
+        line-height: inherit;
+        text-align: right;
     }
 }
