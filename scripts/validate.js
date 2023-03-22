@@ -17,7 +17,7 @@ const showInputError = (input, errorElement, validationMessage, inputButtonBorde
 };
 
 const hideInputError = (input, errorElement, inputButtonBorder, errorActiveClass) => {
-    errorElement.textContent.reset();
+    errorElement.textContent = '';
     input.classList.remove(inputButtonBorder);
     errorElement.classList.remove(errorActiveClass);
 };
