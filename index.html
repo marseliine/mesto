@@ -49,14 +49,16 @@
           name="popup-name"
           class="popup__input popup__input_type_name"
           placeholder="Имя"
-          minlength="2" maxlength="40">
+          minlength="2" maxlength="40"
+          required>
         <span class="popup__input-error popup__input-error_position-top popup__input-error_type_popup-name popup-name-input-error"></span>
         <input
           type="text"
           name="popup-job"
           class="popup__input popup__input_type_job"
           placeholder="О себе"
-          minlength="2" maxlength="40">
+          minlength="2" maxlength="40"
+          required>
         <span class="popup__input-error  popup__input-error_position-bottom popup__input-error_type_popup-job popup-job-input-error"></span>
         <button class="popup__button-submit" type="submit">Сохранить</button>
       </form>
@@ -72,13 +74,15 @@
               name="popup-title"
               class="popup__input popup__input_type_title"
               placeholder="Название"
-              minlength="2" maxlength="30">
+              minlength="2" maxlength="30"
+              required>
       <span class="popup__input-error popup__input-error_position-top popup__input-error_type_popup-title popup-title-input-error"></span>
       <input
               name="popup-href"
               class="popup__input popup__input_type_href"
               type="url"
-              placeholder="Ссылку на картинку">
+              placeholder="Ссылку на картинку"
+              required>
       <span class="popup__input-error popup__input-error_position-bottom popup__input-error_type_popup-href popup-href-input-error"></span>
       <button class="popup__button-submit button-submit-new" type="submit">Сохранить</button>
     </form>
