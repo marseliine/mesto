@@ -34,9 +34,18 @@ const titlePopup = document.querySelector('.popup__header-photo');
 
 function openPopup (popups) {
     popups.classList.add('popup_opened');
+    document.addEventListener('mousedown', closeOverlay);
+    document.addEventListener('keydown', closePressingEsc);
 }
 function closePopup (popups) {
     popups.classList.remove('popup_opened');
+    document.removeEventListener('mousedown', closeOverlay);
+    document.removeEventListener('keydown', closePressingEsc);
+}
+function closeOverlay(evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+        closePopup(evt.target);
+    }
 }
 function closePressingEsc(evt) {
     if (evt.key === 'Escape') {
@@ -45,13 +54,6 @@ function closePressingEsc(evt) {
         closePopup(popupElement);
     }
 }
-document.addEventListener('keydown', closePressingEsc);
-
-document.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup_opened')) {
-        closePopup(evt.target);
-    }
-})
 
 buttonClose.forEach( (button) => {
     const popupButtonClosest = button.closest('.popup');
