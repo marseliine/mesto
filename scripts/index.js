@@ -28,6 +28,7 @@ const popupButtonCloseNewCard = document.querySelector('.button-close-new');
 const popupButtonCloseProfile = document.querySelector('.popup__button-close');
 const popupImageClose = document.querySelector('.popup__button-close-photo');
 
+
 const imageBig = document.querySelector('.popup__open-photo');
 const titlePopup = document.querySelector('.popup__header-photo');
 
@@ -70,9 +71,16 @@ function handleFormSubmit (evt) {
     closePressingEsc(evt);
 }
 formElementEditProfile.addEventListener('submit', handleFormSubmit);
+const submitButtonForm = formElementNewCard.querySelector('.popup__button-submit');
+
+function disableButtonSubmit(submitButtonForm, config) {
+    submitButtonForm.classList.add(config.inactiveButtonClass);
+    submitButtonForm.disabled = true;
+}
 
 profileAdd.addEventListener('click', function() {
-    openPopup(popupNewCard)
+    openPopup(popupNewCard);
+    disableButtonSubmit(submitButtonForm, validationConfig);
 });
 const cards = [
     {
@@ -140,6 +148,7 @@ function handleLikeClick (evt) {
     const likeButton = evt.target;
     likeButton.classList.toggle('element__mask-button_active');
 }
+
 ///////////функция удаление карточки////////////////
 function handleDeleteButtonClick(event) {
     const button = event.target;
