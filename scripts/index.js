@@ -1,4 +1,4 @@
-const buttonClose = document.querySelectorAll('.popup__button-close');
+const buttonCloses = document.querySelectorAll('.popup__button-close');
 const popupEdit = document.querySelector('.popup-edit');
 const popupNewCard = document.querySelector('.popup-new');
 const popupPhotoBig = document.querySelector('.popup-photo');
@@ -55,7 +55,7 @@ function closePressingEsc(evt) {
     }
 }
 
-buttonClose.forEach( (button) => {
+buttonCloses.forEach( (button) => {
     const popupButtonClosest = button.closest('.popup');
     button.addEventListener('click', () => closePopup(popupButtonClosest));
 });
@@ -70,7 +70,6 @@ function handleFormSubmit (evt) {
     profileName.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
     closePopup(popupEdit);
-    closePressingEsc(evt);
 }
 formElementEditProfile.addEventListener('submit', handleFormSubmit);
 const submitButtonForm = formElementNewCard.querySelector('.popup__button-submit');
@@ -82,7 +81,6 @@ function disableButtonSubmit(submitButtonForm, config) {
 
 profileAdd.addEventListener('click', function() {
     openPopup(popupNewCard);
-    disableButtonSubmit(submitButtonForm, validationConfig);
 });
 const cards = [
     {
@@ -128,9 +126,9 @@ function createCard(elementName, elementLink) {
     deleteButton.addEventListener('click', handleDeleteButtonClick);
 
     function handleBigImage(evt){
-        imageBig.src = evt.target.src;
-        titlePopup.textContent = evt.target.closest('.element').querySelector('.element__title').textContent;
-        imageBig.alt = evt.target.closest('.element').querySelector('.element__title').textContent;
+        imageBig.src = elementLink;
+        titlePopup.textContent = elementName;
+        imageBig.alt = elementName;
         openPopup(popupPhotoBig)
     }
 
@@ -165,9 +163,9 @@ function handleFormSubmitCard(evt) {
     // добавляет новую карточку в галерею
     addCard(createCard(popupInputImage.value, popupInputLink.value));
     ///// Закрытие попапа
+    disableButtonSubmit(submitButtonForm, validationConfig);
     formElementNewCard.reset();
     closePopup(popupNewCard);
-    closePressingEsc(evt);
 };
 
 formElementNewCard.addEventListener('submit', handleFormSubmitCard);
