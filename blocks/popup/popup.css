@@ -5,10 +5,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
+    display: flex;
+    visibility: hidden;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity 0.5s ease-in-out, visibility 0.5s linear 0s;
-    z-index: 6;
+    transition: visibility 0.2s, opacity 0.2s ease-in;
 }
