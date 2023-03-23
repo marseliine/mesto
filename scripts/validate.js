@@ -45,36 +45,37 @@ const checkInputValidity = (input, errorAllTypeTemplate, inputButtonBorder, erro
     }
 };
 
-const hasInvalidInput = (inputList) => {
-    return inputList.some((input) => !input.validity.valid);
+const hasInvalidInput = (inputLists) => {
+    return inputLists.some((input) => !input.validity.valid);
 };
 
-const toggleButtonState = (submitButton, inactiveButtonClass, inputList) => {
-    if (!hasInvalidInput(inputList)) {
+const toggleButtonState = (submitButton, inactiveButtonClass, inputLists) => {
+    if (!hasInvalidInput(inputLists)) {
         enableButton(submitButton, inactiveButtonClass);
     } else {
         disableButton(submitButton, inactiveButtonClass);
     }
 };
 
-const setEventListeners = (config, formList, errorAllTypeTemplate, inputButtonBorder, errorActiveClass, inactiveButtonClass
+const setEventListeners = (config, formLists, errorAllTypeTemplate, inputButtonBorder, errorActiveClass, inactiveButtonClass
 ) => {
-    formList.forEach((form) => {
-        const inputList = Array.from(form.querySelectorAll(config.inputPopupSelector));
+    formLists.forEach((form) => {
+        const inputLists = Array.from(form.querySelectorAll(config.inputPopupSelector));
         const submitButton = form.querySelector(config.submitSelectorButton);
-        inputList.forEach((input) => {
+        toggleButtonState(submitButton, inactiveButtonClass, inputLists);
+        inputLists.forEach((input) => {
             input.addEventListener('input', (evt) => {
                 checkInputValidity(input, errorAllTypeTemplate, inputButtonBorder, errorActiveClass
                 );
-                toggleButtonState(submitButton, inactiveButtonClass, inputList);
+                toggleButtonState(submitButton, inactiveButtonClass, inputLists);
             });
         });
     });
 };
 
 const enableValidation = (config) => {
-    const formList = Array.from(document.querySelectorAll(config.formAllSelector));
-    setEventListeners(config, formList, config.errorAllTypeTemplate, config.inputButtonBorder, config.errorActiveClass, config.inactiveButtonClass
+    const formLists = Array.from(document.querySelectorAll(config.formAllSelector));
+    setEventListeners(config, formLists, config.errorAllTypeTemplate, config.inputButtonBorder, config.errorActiveClass, config.inactiveButtonClass
     );
 };
 
