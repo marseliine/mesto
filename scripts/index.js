@@ -65,18 +65,18 @@ profileEdit.addEventListener('click', function() {
     jobInput.value = profileSubtitle.textContent;
     openPopup(popupEdit)
 });
-function handleFormSubmit (evt) {
+function handleProfileFormSubmit (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
     closePopup(popupEdit);
 }
-formElementEditProfile.addEventListener('submit', handleFormSubmit);
-const submitButtonForm = formElementNewCard.querySelector('.popup__button-submit');
+formElementEditProfile.addEventListener('submit', handleProfileFormSubmit);
+const cardFormSubmitButton = formElementNewCard.querySelector('.popup__button-submit');
 
-function disableButtonSubmit(submitButtonForm, config) {
-    submitButtonForm.classList.add(config.inactiveButtonClass);
-    submitButtonForm.disabled = true;
+function disableButtonSubmit(cardFormSubmitButton, config) {
+    cardFormSubmitButton.classList.add(config.inactiveButtonClass);
+    cardFormSubmitButton.disabled = true;
 }
 
 profileAdd.addEventListener('click', function() {
@@ -163,7 +163,7 @@ function handleFormSubmitCard(evt) {
     // добавляет новую карточку в галерею
     addCard(createCard(popupInputImage.value, popupInputLink.value));
     ///// Закрытие попапа
-    disableButtonSubmit(submitButtonForm, validationConfig);
+    disableButtonSubmit(cardFormSubmitButton, validationConfig);
     formElementNewCard.reset();
     closePopup(popupNewCard);
 };
