@@ -21,19 +21,11 @@
         <button class="profile__edit-button" type="button"></button>
         <p class="profile__subtitle">Исследователь океана</p>
       </div>
-      <button class="profile__add-button" type="button"></button>
+      <button class="profile__add-button" id="add-button" type="button"></button>
     </section>
-    <section class="elements">
-      <template class="card-template">
-        <article class="element">
-          <button class = "element__trash"></button>
-          <img class="element__photo" data-type="auto">
-          <div class="element__mask">
-            <h2 class="element__title"></h2>
-            <button class="element__mask-button"></button>
-          </div>
-        </article>
-      </template>
+    <section class="cards page__cards">
+      <ul class="cards__list">
+      </ul>
     </section>
   </main>
   <footer class="footer">
@@ -43,10 +35,10 @@
     <div class="popup__container">
       <button aria-label="Close" class="popup__button-close" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="form-profile" novalidate>
+      <form class="popup__form" id="form-profile" novalidate>
         <input
           type="text"
-          name="popup-name"
+          id="popup-name"
           class="popup__input popup__input_type_name"
           placeholder="Имя"
           minlength="2" maxlength="40"
@@ -54,7 +46,7 @@
         <span class="popup__input-error popup__input-error_position-top popup__input-error_type_popup-name popup-name-input-error"></span>
         <input
           type="text"
-          name="popup-job"
+          id="popup-job"
           class="popup__input popup__input_type_job"
           placeholder="О себе"
           minlength="2" maxlength="40"
@@ -68,7 +60,7 @@
     <div class="popup__container container-new">
     <button aria-label="Close" class="popup__button-close button-close-new" type="button"></button>
     <h2 class="popup__title title-new">Новое место</h2>
-    <form class="popup__form form-new" name="form-cards">
+    <form class="popup__form form-new" name="form-cards" id="place-form">
       <input
               type="text"
               name="popup-title"
@@ -95,7 +87,18 @@
       <button type="button" class="popup__button-close popup__button-close-photo"></button>
     </div>
   </div>
-  <script src="./scripts/validate.js"></script>
-  <script src="./scripts/index.js"></script>
+  <template id="template">
+    <li class="card">
+      <button class="card__delete" type="button"></button>
+      <img class="card__image" src="#" alt=" ">
+      <div class="card__container">
+        <h3 class="card__title"></h3>
+        <button class="card__button" type="button" aria-label="button"></button>
+      </div>
+    </li>
+  </template>
+  <script  type="module" src="./scripts/Card.js"></script>
+  <script type="module" src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
