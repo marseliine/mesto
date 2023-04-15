@@ -16,7 +16,7 @@ export default class Card {
     }
 
     _likeCardHandler(){
-        this._card.querySelector(this._cardLike).classList.toggle('card__like_active');
+        this._like.classList.toggle('card__like_active');
 
     }
 
@@ -31,9 +31,11 @@ export default class Card {
     }
     generateCard () {
         this._card = this._getTemplate();
+        this._like = this._card.querySelector(this._cardLike);
+        this._cardImageNew = this._card.querySelector(this._cardImage);
+        this._cardImageNew.src = this._image;
+        this._cardImageNew.alt = this._name;
         this._setEventListeners();
-        this._card.querySelector(this._cardImage).src = this._image;
-        this._card.querySelector(this._cardImage).alt = this._name;
         this._card.querySelector(this._cardTitle).textContent = this._name;
         return this._card;
     }
