@@ -11,14 +11,14 @@ const cardFormValidation = new FormValidator (validate, addCardConst.popupAddCar
 cardFormValidation.enableValidation();
 
 
-const  submitButtonHandler = (evt) => {
+const  handleProfileFormSubmit = (evt) => {
     evt.preventDefault();
     popupEditConst.profileTitleName.textContent = popupEditConst.popupProfileInputName.value;
     popupEditConst.profileJob.textContent = popupEditConst.popupProfileInputJob.value;
     closePopup(popupEditConst.popupEditProfile); 
 }
 
-const editFunctionHandler = () => {
+const openProfilePopup = () => {
     popupEditConst.popupProfileInputName.value = popupEditConst.profileTitleName.textContent;
     popupEditConst.popupProfileInputJob.value = popupEditConst.profileJob.textContent;
     editFormValidation.resetValidation();
@@ -26,7 +26,7 @@ const editFunctionHandler = () => {
 
 }
 
-const addingCardHandler = (name, link) => {
+const handleCardClick = (name, link) => {
     popupPhotoConst.popupImage.src = link;
     popupPhotoConst.popupImage.alt = name;
     popupPhotoConst.popupText.textContent = name;
@@ -35,9 +35,9 @@ const addingCardHandler = (name, link) => {
 }
 
 
-const addSubmitCard = (evt) => {
+const handleAddFormCardSubmit = (evt) => {
     evt.preventDefault();
-    addCardHandler({
+    addCard({
         name: addCardConst.popupPlaceTitle.value,
         link: addCardConst. popupUrlphoto.value
     });
@@ -47,11 +47,11 @@ const addSubmitCard = (evt) => {
 
 
 const makeCard = item => {
-    const card = new Card(item, addingCardHandler, templateOfCard, '#template');
+    const card = new Card(item, handleCardClick, templateOfCard, '#template');
     const cardElement = card.generateCard();
     return cardElement;
 }
-const addCardHandler = (item, ending) => {
+const addCard = (item, ending) => {
     const cardElement = makeCard(item);
     const conditional = ending ? 'append' : 'prepend';
     addCardConst.cardsList[conditional] (cardElement);
@@ -60,7 +60,7 @@ const addCardHandler = (item, ending) => {
 
 const renderList = () => {
     initialCards.forEach(item => {
-        addCardHandler(item, true);
+        addCard(item, true);
     })
 }
 renderList();
@@ -69,12 +69,12 @@ renderList();
 
 switchPopupListeners();
 
-popupEditConst.profileEditButton.addEventListener('click', editFunctionHandler);
-popupEditConst.popupProfileForm.addEventListener('submit', submitButtonHandler)
+popupEditConst.profileEditButton.addEventListener('click', openProfilePopup);
+popupEditConst.popupProfileForm.addEventListener('submit', handleProfileFormSubmit)
 
 addCardConst.profileAddButton.addEventListener('click', () => {
     addCardConst. popupAddCardForm.reset();
     cardFormValidation.resetValidation();
     openPopup(addCardConst.popupAddCard)
 });
-addCardConst.popupAddCardForm.addEventListener('submit', addSubmitCard);
+addCardConst.popupAddCardForm.addEventListener('submit', handleAddFormCardSubmit);
