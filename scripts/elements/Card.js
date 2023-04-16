@@ -25,8 +25,8 @@ export default class Card {
     }
 
     _setEventListeners() {
-        this._card.querySelector(this._cardImage).addEventListener('click', () => this._addingCardHandle(this._name, this._image));
-        this._card.querySelector(this._cardLike).addEventListener('click', () => this._likeCardHandler());
+        this._cardImageNew.addEventListener('click', () => this._addingCardHandle(this._name, this._image));
+        this._like.addEventListener('click', () => this._likeCardHandler());
         this._card.querySelector(this._cardDelete).addEventListener('click', () => this._deleteCardHandler());
     }
     generateCard () {
