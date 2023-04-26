@@ -1,6 +1,0 @@
-@media screen and (max-width: 500px){
-.page__footer{
-    max-width: calc(100% - 19px*2);
-    margin: 0 auto;
-}
-}
