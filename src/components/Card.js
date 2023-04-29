@@ -18,7 +18,7 @@ class Card {
     };
 
     _deleteCard() {
-        this._cardDeleteButton.closest(".element").remove();
+        this._view.remove();
     };
 
     _setEventListeners() {
